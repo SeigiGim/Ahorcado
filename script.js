@@ -37,10 +37,20 @@ let selectedWord;
 let usedLetters;
 let mistakes;
 let hits;
+let divResultado = document.createElement('div');
+let contentResultado = document.createTextNode('You Win!');
+let divVacio = document.getElementById('divVacio');
+divResultado.classList.add('divWin')
+
+const youWin = () => {
+    divResultado.appendChild(contentResultado);
+    document.body.insertBefore(divResultado, divVacio);
+}
 
 const endGame = () => {
     document.removeEventListener('keydown', letterEvent);
     startButton.style.display = 'block';
+    if (hits === selectedWord.length) youWin();
 }
 
 const correctLetter = letter => {
@@ -109,6 +119,7 @@ const startGame = () => {
     selectRandomWord();
     drawWord();
     document.addEventListener('keydown', letterEvent)
+    divResultado.remove();
 }
 
 startButton.addEventListener('click', startGame);

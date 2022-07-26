@@ -8,10 +8,19 @@ body {
     font-family: 'HILOGINCON', sans-serif;
     font-family: 'HILOGINREG', sans-serif;
     font-family: 'HILOGINBOLD', sans-serif;
+    /* display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center; */
+}
+
+.container {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    margin-top: 100px;
 }
 
 #wordContainer {
@@ -50,4 +59,14 @@ body {
     font-size: 20px;
     border-radius: 4px;
     cursor: pointer;
+}
+
+.divWin {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin: 40px auto 40px auto;
+    padding: 80px;
+    font-size: 80px;
 }
